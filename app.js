@@ -10,12 +10,15 @@ const order= require('./api/routes/order');
 const res = require('express/lib/response');
 
 app.use(morgan('dev'))
-app.use('/product', product);
-app.use('/order', order);
-
 // app.use(bodyparser.urlencoded({extended:false}));
 // app.use(bodyparser.json());  
 app.use(express.json())   
+
+
+app.use('/product', product);
+app.use('/order', order);
+
+
 
 //error handling
 

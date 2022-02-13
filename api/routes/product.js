@@ -1,7 +1,7 @@
 const express= require('express');
 const router = express.Router();
 const bodyparser= require('body-parser');
-const product= require('../models/productModel');
+const Product= require('../models/productModel');
 
 router.get('/',(req,resp)=>{
 
@@ -13,7 +13,7 @@ router.get('/',(req,resp)=>{
 
 router.post('/',(req,resp,next)=>{
 
-    const product = new product({
+    const product = new Product({
         name: req.body.name,
         price: req.body.price
     });
