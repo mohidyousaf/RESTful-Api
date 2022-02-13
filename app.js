@@ -24,7 +24,7 @@ app.use('/order', order);
 
 app.use((req,resp,next)=>{
 
-    const error= new Error('Not found');
+    const error= new Error('Congrats! RESTful API successfully deployed on heroku');
     error.status= 404;
     next(error);
 
