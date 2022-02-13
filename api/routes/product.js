@@ -18,6 +18,8 @@ router.post('/',(req,resp,next)=>{
         price: req.body.price
     });
 
+
+    //save is model function of mongoose, and we return a promise or catch errors
     product.save().then(()=>{
         console.log('product is added');
         
