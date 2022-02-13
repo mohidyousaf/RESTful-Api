@@ -5,9 +5,16 @@ const Product= require('../models/productModel');
 
 router.get('/',(req,resp)=>{
 
-    resp.status(200).json({
-        message: 'get request working'
-    })  
+    Product.find()
+    .exec()
+    .then(docs=>{
+        console.log(docs)
+        resp.status(200).json(docs)
+    }
+    )
+    .catch(err=>{
+        resp.status(500).json({error:err})
+    })
 
 });
 
